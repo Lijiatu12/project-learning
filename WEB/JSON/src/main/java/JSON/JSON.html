@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+/*json的作用*/
+/*1.用于数据的传输*/
+/*2.用于数据的存储*/
+/*3.用于数据的配置*/
+/*4.用于数据的描述*/
+
+</head>
+<body>
+
+<script>
+
+    /*json的语法*/
+
+    var personStr = '{"name":"张三", "age":10,"dog":{"dname":"旺财","loverSingers":["周杰伦","王力宏","张学友","张国荣"],"friends":[{"fname":"李四","age":20},{"fname":"王五","age":30},{"fname":"赵六","age":40}]},"lover":["李四","王五","赵六"],"friends":[{"fname":"李四","age":20},{"fname":"王五","age":30},{"fname":"赵六","age":40}]}';
+
+
+
+    //通过JSON.parse()方法将json字符串转换为json对象
+
+    var person = JSON.parse(personStr)
+    console.log(personStr);
+
+    console.log(person.name);
+    console.log(person.dog.dname);
+    console.log(person.dog.loverSingers[0]);
+    console.log(person.dog.friends[0].fname);
+</script>
+
+</body>
+</html>

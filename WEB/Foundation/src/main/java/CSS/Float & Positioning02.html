@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动与定位</title>
+
+
+
+    <style>
+
+
+           /* 定位
+           absolute  绝对定位  相对于父元素定位
+            relative  相对定位  相对于自己原来的位置定位
+            fixed     固定定位  相对于浏览器窗口定位
+            static    静态定位  默认定位方式
+            inherit   继承定位  继承父元素的定位方式
+
+
+
+            */
+
+        .innerDiv{
+            width: 200px;
+            height: 200px;
+            border: 1px solid blue;
+        }
+        .d1{
+            background-color: greenyellow;
+            position: absolute;
+            top: 100px;
+            right: 100px;
+
+        }
+        .d2{
+            background-color: rgb(210,119,119);
+
+        }
+        .d3{
+            background-color: rgb(142,236,229)
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <div class="innerDiv d1">diva</div>
+    <div class="innerDiv d2">divb</div>
+    <div class="innerDiv d3">divc</div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三个选择器</title>
+
+
+    <style>
+
+        /* 1.元素选择器   同名元素选择器 不希望   不同名元素也希望
+        input{
+            width: 200px;
+            height: 30px;
+            border: 1px solid green;
+            border-radius: 5px;
+            color: white;
+            line-height:30px;
+            font-family: "华文隶书";
+            background-color: chartreuse;
+        }*/
+
+
+        /* 2.类选择器  一个类名可以给多个元素使用  一个元素可以使用多个类名 */
+
+
+       /* .btn{
+            width: 200px;
+            height: 30px;
+            border: 1px solid green;
+            border-radius: 5px;
+            color: white;
+            line-height:30px;
+            font-family: "华文隶书";
+            background-color: chartreuse;
+        }*/
+
+
+
+        /*3 id选择器  一个id名只能给一个元素使用  一个元素只能使用一个id名 */
+
+
+     /*   #btn4{
+            width: 200px;
+            height: 30px;
+            border: 1px solid green;
+            border-radius: 5px;
+            color: white;
+            line-height:30px;
+            font-family: "华文隶书";
+            background-color: chartreuse;
+        }
+*/
+
+
+        .shape{
+            width: 200px;
+            height: 30px;
+
+            border-radius: 5px;
+
+        }
+
+        .color{
+            background-color: rgb(179,241,85);
+            color: white;
+            border: 3px solid green;
+
+        }
+
+
+        .front{
+
+            line-height:30px;
+            font-family: "华文隶书";
+            line-height: 30px;
+
+        }
+
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+     <input id="btn1"   class="shape color" type="text" value= "按钮" >
+     <input  id="btn2" class="color front" type="text" value= "按钮" >
+     <input id="btn3" type="text" value= "按钮" >
+     <input id="btn4" type="text" value= "按钮" >
+      <button id="btn5">按钮</button>
+</body>
+</html>
+
+
+
+

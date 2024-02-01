@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+
+
+    <!-- 1. 可以使用无参数构造器构造实例化的组件
+            <bean  一个组件信息  -一个组件对象  id组件的标识  class 组件的全类名
+
+          将一个组件类声明两个组件信息   ，  默认是单例模式，会实例化两个组件对象
+
+
+
+
+要求：当前组件必须有无参数构造器
+    -->
+
+    <bean id="user" class="com.hanxun.ioc_01.HappyComponent"> </bean>
+
+    <bean id="user2" class="com.hanxun.ioc_01.HappyComponent"> </bean>
+
+
+
+
+    <!--2.静态工厂方法创建对象，配置ioc
+
+         <bean  一个组件信息  -一个组件对象  id组件的标识  class 工厂类的全限定符
+
+            factory-method="getInstance"  工厂方法的名字
+
+
+
+
+            要求：指定静态工厂方法必须是static
+    -->
+
+
+    <bean id="clinetService " class="com.hanxun.ioc_01.ClinetService" factory-method="getInstance"></bean>
+
+
+
+    <!--3.非静态工厂方法创建对象，配置ioc
+
+        1.  <bean  一个组件信息  -一个组件对象  id组件的标识  class 工厂类的全限定符
+
+
+         2.根据工厂对象进行实例化组件对象
+            factory-bean="defaultServiceLocator"  工厂类的名字
+            factory-method="createClientServiceInstance"  工厂方法的名字
+
+
+
+          要求：实例化必须非静态对象
+      -->
+
+<bean id="defaultServiceLocator" class="com.hanxun.ioc_01.DefaultServiceLocator" />
+
+    <bean id="clinetService2 " factory-bean="defaultServiceLocator" factory-method="createClientServiceInstance"></bean>
+
+
+
+</beans>

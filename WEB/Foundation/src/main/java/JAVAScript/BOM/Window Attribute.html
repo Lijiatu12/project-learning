@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window常见属性</title>
+
+
+    /*window 常见属性
+    history 历史记录
+    location 地址栏
+    session 会话  存储一些会话级别的数据
+    localStorage 本地存储
+
+    */
+
+
+    <script>
+         //history
+            function funa() {
+
+                history.back()
+                
+
+        }
+
+
+        function funb() {
+
+          // history.forward()
+            history.go(1)//向前翻一页
+
+        }
+
+
+//location
+        function func() {
+
+            location.href = "http://www.atguigu.com"
+        }
+        
+        //session   localStorage
+        function fund() {
+
+                window.sessionStorage.setItem("key","valueA");
+                window.localStorage.setItem("key","valueB");
+        }
+        
+        function fune() {
+                console.log(window.sessionStorage.getItem("keya"));
+                console.log(window.localStorage.getItem("keyb"));
+            
+        }
+        function funf() {
+                     window.sessionStorage.removeItem("keya");
+                    window.localStorage.removeItem("keyb");
+            
+        }
+    </script>
+
+</head>
+<body>
+
+
+
+<button onclick="fund()">存储数据</button>
+<button onclick="fune()">读取数据</button>
+<button onclick="funf()">清空数据</button>
+<button onclick="funa()">上一页</button>
+<button onclick="funb()">下一页</button>
+
+<a href="http://www.atguigu.com" >尚硅谷</a>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM动态绑定 +页面加载事件</title>
+
+    /*  页面加载事件*/
+
+
+    <script>
+
+       /* function  ready() {
+            alert("页面加载完成");
+
+            var btn = document.getElementById("btn1");
+
+
+            btn.onclick = function () {
+                alert("按钮被点击了");
+            }
+        }*/
+
+       window.onload = function () {
+           alert("页面加载完成");
+
+           var btn = document.getElementById("btn1");
+
+           btn.onclick = function () {
+               alert("按钮被点击了");
+           }
+       }
+
+
+
+    </script>
+
+
+
+
+</head>
+
+<body onload="ready()">
+
+<button id="btn1"  >按钮</button>
+
+</body>
+</html>

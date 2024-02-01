@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+
+
+
+    <!-- 引用和被引用的组件  必须全部在ioc容器中  不能乡愁-->
+
+
+
+
+<!-- 1. 单一构造参数注入-->
+
+
+    <bean id="userDao" class="com.hanxun.ioc_02.UserDao"/>
+    <!--spring会  1. 先创建对象【ioc】  2. 再进行属性赋值-->
+
+
+    <bean id="userService" class="com.hanxun.ioc_02.UserService">
+
+        <!-- 指定构造参数传值  value 直接值
+                              ref  引用其他的bean  beanId-->
+        <constructor-arg ref="userDao"/>
+
+    </bean>
+
+
+    <!-- 2. 多个构造参数注入-->
+<bean id="userService1"  class="com.hanxun.ioc_02.UserService">
+
+
+<!--要按顺序进行填写  value  直接值   ref  引用其他的bean  beanId  -->
+    <constructor-arg   value="18" />
+    <constructor-arg   value="二狗子"/>
+    <constructor-arg   ref="userDao"/>
+
+</bean>
+
+
+    <!-- 2.第二个方案 多个构造参数注入     推荐-->
+    <bean id="userService2"  class="com.hanxun.ioc_02.UserService">
+
+        <!--不需要按顺序进行填写   -->
+        <constructor-arg   name="name" value="二狗子" />
+        <constructor-arg   name ="age" value="18"/>
+        <constructor-arg   name="userDao" ref="userDao"/>
+
+    </bean>
+
+
+<!-- 3. 触发setter方法进行注入·-->
+    <bean id="movieFinder" class="com.hanxun.ioc_02.MovieFinder"/>
+
+
+    <bean id="simpleMovieLister" class="com.hanxun.ioc_02.SimpleMovieLister">
+
+            <!-- name 属性名  调用set方法的名
+            value  ref-->
+            <property name="movieName" value="消失的她"/>
+            <property name="movieFinder" ref="movieFinder"/>
+
+    </bean>
+
+
+
+
+
+
+
+</beans>

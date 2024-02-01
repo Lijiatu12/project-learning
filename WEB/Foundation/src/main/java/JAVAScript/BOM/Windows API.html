@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window常见API</title>
+
+    /* widow三种弹窗方式   window可以不写
+
+        // alert("hello");
+        // confirm("hello");
+        // prompt("hello");*/
+
+
+    <script>
+        function fun1() {
+
+            window.alert("hello");
+        }
+
+
+        function fun2() {
+
+        var res = window.prompt("hello");
+        console.log(res);
+
+
+        }
+
+        function fun3() {
+
+                var res = window.confirm("确定要删除吗");
+                console.log(res);
+
+        }
+
+
+        function fun4() {
+
+            window.setTimeout(function () {
+
+                console.log("hello");
+
+            },2000);
+
+        }
+    </script>
+
+</head>
+<body>
+
+<a href = "Window Attribute.html">window常见属性</a>
+
+<button onclick="fun1()">信息提示框</button>
+<button onclick="fun2()">确认提示框</button>
+<button onclick="fun3()">输入提示框</button>
+<button onclick="fun4()">两秒钟之后向控制台打印</button>
+</body>
+</html>

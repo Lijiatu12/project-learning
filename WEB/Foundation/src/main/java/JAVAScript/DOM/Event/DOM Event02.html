@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DDOM动态触发 </title>
+
+
+
+    <script>
+window.onload = function () {
+        var div1 = document.getElementById("d1");
+
+        div1.onclick = function () {
+            div1.style.backgroundColor = "red"
+        }
+
+
+
+            var btn = document.getElementById("btn1");
+
+            btn.onclick = function () {
+                alert("按钮被点击了");
+
+                //通过DOM触发事件
+
+                div1.onclick();
+            }
+
+        }
+
+
+    </script>
+
+    <style>
+        .div1{
+            width: 100px;
+            height: 50px;
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="d1" class="div1" > </div>
+
+<button id="btn1"  >按钮</button>
+
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增删元素</title>
+</head>
+
+增删元素：
+追加元素
+某个元素前增加元素
+替换元素
+删除元素
+
+
+
+
+<script>
+
+        function addcs() {
+
+
+/*  创建元素*/
+            var csli = document.createElement("li");
+/*设置属性*/
+            csli.id ="cs"
+/*设置文本*/
+            csli.innerHTML = "杭州";
+/*获取父元素*/
+           var cutyul = document.getElementById("city");
+/*添加子元素*/
+           cutyul.appendChild(csli)
+        }
+
+
+
+        function addcsBeforeSz() {
+
+
+            /*  创建元素*/
+            var csli = document.createElement("li");
+            /*设置属性*/
+            csli.id = "cs"
+            /*设置文本*/
+            csli.innerHTML = "杭州";
+            /*获取父元素*/
+            var cutyul = document.getElementById("city");
+
+
+            /*在子元素前面添加*/
+            var szli = document.getElementById("sz");
+            cutyul.insertBefore(csli, szli)
+
+        }
+
+            function replaceSz() {
+                /*  创建元素*/
+                var csli = document.createElement("li");
+                /*设置属性*/
+                csli.id = "cs"
+                /*设置文本*/
+                csli.innerHTML = "杭州";
+                /*获取父元素*/
+                var cutyul = document.getElementById("city");
+
+                /*替换元素*/
+                var szli = document.getElementById("sz");
+                cutyul.replaceChild(csli, szli)
+
+
+            }
+
+
+            function removeSz() {
+                /*删除元素*/
+                var szli = document.getElementById("sz");
+
+                szli.remove()
+            }
+
+
+
+        function clearCity() {
+
+
+            var cutyul = document.getElementById("city");
+
+            var fc = cutyul.firstChild;
+
+            while (fc != null){
+                fc.remove();
+                fc = cutyul.firstChild;
+            }
+
+            //cutyul.innerHTML = "";
+          //  cutyul.remove()
+
+        }
+
+
+
+</script>
+
+
+
+
+</head>
+<body>
+
+<ul id="city">
+    <li id="bj">北京</li>
+    <li id="sh">上海</li>
+    <li id="sz">深圳</li>
+    <li id="gz">广州</li>
+
+
+    </ul>
+<hr>
+
+/*添加子  元素*/
+/*在深圳前面添加杭州*/
+/*替换元素*/
+删除元素
+<button  onclick="addcs()">增加杭州</button>
+
+<button  onclick="addcsBeforeSz()">在深圳前面添加杭州</button>
+
+<button  onclick="replaceSz()">替换深圳</button>
+
+<button  onclick="removeSz()">删除深圳</button>
+
+清空城市列表
+<button  onclick="clearCity()">清空城市列表</button>
+
+
+</body>
+</html>

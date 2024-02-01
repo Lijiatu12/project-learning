@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="vue3" />
+        <module name="Foundation" />
+        <module name="JSON" />
+        <module name="Session" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Filter" target="21" />
+      <module name="Servlet" target="21" />
+      <module name="SesionManagement" target="21" />
+      <module name="vue3" target="21" />
+      <module name="WEB" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

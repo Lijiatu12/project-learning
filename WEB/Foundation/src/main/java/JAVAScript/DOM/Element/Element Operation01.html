@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 对元素的操作</title>
+
+
+属性的操作：元素名.属性名
+    //获取元素的属性
+    alert(btn.getAttribute("id"));
+
+    //设置元素的属性
+    btn.setAttribute("id","btn2");
+
+    //删除元素的属性
+    btn.removeAttribute("id");
+
+    对样式的操作：元素名.style.样式名
+
+    操作文本内容：元素名.innerText    /*innerText  与innerHTML 的区别*/
+
+
+    <script>
+
+        function chanageAttribute() {
+
+            var in1 = document.getElementById("in1");
+
+            in1.type = "button";
+            in1.value = "嗨";
+        }
+
+function chanageStyle() {
+
+    var in1 = document.getElementById("in1");
+    in1.style.color = "green";
+
+    in1.style.borderRadius = "5px";         // backgroud-color要变换为backgroundColor
+
+        }
+
+
+        function chanageText() {
+            var div01 = document.getElementById("div01");
+
+            div01.innerText = "你好";
+
+        }
+
+    </script>
+
+
+
+
+    <style>
+
+        #in1{
+
+            background-color: red;
+            /*border-radius: 5px;*/
+
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+<input  id="in1" type="text" value="hello">
+
+
+<div id="div01">
+    hello
+</div>
+
+<hr>
+<button  onclick="chanageAttribute()">操作属性</button>
+<button  onclick="chanageStyle()">操作样式</button>
+<button  onclick="chanageText()">操作文本</button>
+
+
+</body>
+</html>
